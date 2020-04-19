@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class pacman : MonoBehaviour {
-	
+	// brzina i smjerovi kretanja
 	public CharacterController2D kretanje;
 
-	public float brzina = 2f;
+	public float brzina = 3f;  
 
 	float lijevodesno = 0f;
 
@@ -18,6 +18,7 @@ public class pacman : MonoBehaviour {
 	//}
 	
 	// Update is called once per frame
+	// kretanje 
 	public void Update () {
 		lijevodesno = Input.GetAxisRaw("Horizontal") * brzina;
 		goredolje = Input.GetAxisRaw("Vertical") * brzina;

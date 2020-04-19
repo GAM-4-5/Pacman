@@ -2,53 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PacmanMove : MonoBehaviour {
-	public Rigidbody2D rb;
-	public float brzina = 0f;
-	private bool m_FacingRight = true;
-	private bool m_FacingUp = true;
+public class Move : MonoBehaviour {
+
+	public float speed = 4.0f;
+
+	private Vector2 direction = Vector2.zero;
+
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		Vector3 x = new Vector3(Input.GetAxis ("Horizontal") * brzina * Time.deltaTime, Input.GetAxis ("Vertical") * brzina * Time.deltaTime, 0);
-		rb.velocity = x;
-
-		if (Input.GetAxis ("Vertical") > 0 && !m_FacingUp) {
-			FlipUp ();
-		} else if (Input.GetAxis ("Vertical") < 0 && m_FacingUp) {
-			FlipUp ();
-		}
-
-	
-		if (Input.GetAxis ("Horizontal") > 0 && !m_FacingRight) {
-			Flip ();
-		}
-	
-		else if (Input.GetAxis("Horizontal") < 0 && m_FacingRight)
-		{
-			Flip();
-		}
+		CheckInput ();
+		MovePlayer ();
+		UpdateOrientation ();
 
 	}
-	private void Flip()
-	{
-		m_FacingRight = !m_FacingRight;
 
-		Vector3 y = transform.localScale;
-		y.x *= -1;
-		transform.localScale = y;
+	void CheckInput(){    //kretanje lika
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+			direction = Vector2.left;
+		} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			direction = Vector2.right;
+		} else if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			direction = Vector2.up;
+		} else if (Input.GetKeyDown (KeyCode.DownArrow)) {
+			direction = Vector2.down;
+		}
+	
 	}
-
-	private void FlipUp()
-	{
-		m_FacingUp = !m_FacingUp;
-
-		Vector3 x = transform.localScale;
-		x.z *= -0.5f;
-		transform.localScale = x;
+	void MovePlayer(){    
+		transform.localPosition += (Vector3)(direction * speed) * Time.deltaTime;    //kreće se neprekidno
+	}
+	void UpdateOrientation(){     //rotiranje lika ovisno o smjeru kretanja
+		if (direction == Vector2.left) {
+			transform.localScale = new Vector3 (-1, 1, 1);
+			transform.localRotation = Quaternion.Euler (0, 0, 0);
+		} else if (direction == Vector2.right) {
+			transform.localScale = new Vector3 (1, 1, 1);
+			transform.localRotation = Quaternion.Euler (0, 0, 0);
+		} else if (direction == Vector2.up) {
+			transform.localScale = new Vector3 (1, 1, 1);
+			transform.localRotation = Quaternion.Euler (0, 0, 90);
+		} else if (direction == Vector2.down) {
+			transform.localScale = new Vector3 (1, 1, 1);
+			transform.localRotation = Quaternion.Euler (0, 0, 270);
+		}
 	}
 }
