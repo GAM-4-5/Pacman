@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Duhovi.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DuhoviMove.cs">
     <Files>
-      <File FileName="Assets\Duhovi.cs" Line="12" Column="36" />
       <File FileName="Assets\CharacterController2D.cs" Line="21" Column="2" />
-      <File FileName="Assets\PacmanMove.cs" Line="31" Column="61" />
+      <File FileName="Assets\PacmanMove.cs" Line="39" Column="73" />
+      <File FileName="Assets\DuhoviMove.cs" Line="118" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
