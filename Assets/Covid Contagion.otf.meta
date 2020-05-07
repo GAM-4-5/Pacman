@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2862d170376e3ee4481fdf9dfd39e8e7
+timeCreated: 1588866773
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Contagion
+  fontNames:
+  - Contagion
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
