@@ -227,7 +227,7 @@ public class PacmanMove : MonoBehaviour {
 		return moveToNode;
 	}
 
-	GameObject GetTileAtPosition (Vector2 pos) {
+	GameObject GetTileAtPosition (Vector2 pos) {      //traženje pozicija zvjezdica
 
 		int tileX = Mathf.RoundToInt (pos.x);
 		int tileY = Mathf.RoundToInt (pos.y);
@@ -236,16 +236,16 @@ public class PacmanMove : MonoBehaviour {
 		//Debug.Log (pos);
 
 
-		GameObject tile = GameObject.Find ("Ploca").GetComponent<ploca> ().board [tileX, tileY];
+		GameObject tile = GameObject.Find ("Ploca").GetComponent<ploca> ().board [(int) pos.x, (int) pos.y];      //lista u kojoj su spremljeni svi objekti u labirintu
 
 		if (tile != null)
 			return tile;
 		return null;
 	}
 
-	Node GetNodeAtPosition (Vector2 pos){
+	Node GetNodeAtPosition (Vector2 pos){       //uzimanje pozicija nodea
 		
-		GameObject tile = GameObject.Find("Ploca").GetComponent<ploca> ().board [(int) pos.x, (int) pos.y];
+		GameObject tile = GameObject.Find ("Ploca").GetComponent<ploca> ().board [(int) pos.x, (int) pos.y];
 
 		if (tile != null){
 			return tile.GetComponent<Node> ();
@@ -254,9 +254,9 @@ public class PacmanMove : MonoBehaviour {
 		return null;
 	}
 
-	bool OverShotTarget () {        
+	bool OverShotTarget () {        //provjerava je li pacman došao do nodea, odnosno ciljne pozicije
 
-		float nodeToTarget = LengthFromNode (targetNode.transform.position);
+		float nodeToTarget = LengthFromNode (targetNode.transform.position);   
 		float nodeToSelf = LengthFromNode (transform.position);
 
 		return nodeToSelf > nodeToTarget;

@@ -19,14 +19,14 @@ public class jedenjePacmana : MonoBehaviour {
 	public Vector3 duhzel;
 
 	public TextMeshProUGUI GameOvertext;
-	public int broj = 5;
+//	public int broj = 5;
 	public GameObject spojnica;
 	// Use this for initialization
 	void Start () {
 
-		spojnica.SetActive (false);
-
-		brojac ();
+//		spojnica.SetActive (false);
+//
+//		brojac ();
 
 		GameOvertext.gameObject.SetActive (false);
 		pacm.SetActive (true);
@@ -88,15 +88,15 @@ public class jedenjePacmana : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
-	IEnumerator brojac () {            //provjeravanje dodira duhova i pacmana se pokrece nakon 5. sekunde igre
-
-		while (broj > 0) {
-
-			yield return new WaitForSeconds (1f);
-			broj--;
-		}
-
-		yield return new WaitForSeconds (1f);
-		spojnica.SetActive (true);
-	}
+//	IEnumerator brojac () {            //provjeravanje dodira duhova i pacmana se pokrece nakon 5. sekunde igre
+//
+//		while (broj > 0) {
+//
+//			yield return new WaitForSeconds (1f);
+//			broj--;
+//		}
+//
+//		yield return new WaitForSeconds (1f);
+//		spojnica.SetActive (true);
+//	}
 }
