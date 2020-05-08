@@ -15,7 +15,7 @@ public class ploca : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Object[] objects = GameObject.FindObjectsOfType (typeof(GameObject));
+		Object[] objects = GameObject.FindObjectsOfType (typeof(GameObject));        //unutar zadanih veličina traži pozicije svih objekata
 
 		foreach (GameObject o in objects) {
 

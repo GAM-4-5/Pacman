@@ -10,7 +10,7 @@ public class Node : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		validDirections = new Vector2[neighbors.Length];
+		validDirections = new Vector2[neighbors.Length];         //sprema pozicije nodova i susjednih nodova
 
 		for (int i = 0; i < neighbors.Length; i++) {
 
